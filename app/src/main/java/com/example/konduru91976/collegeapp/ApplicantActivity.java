@@ -3,6 +3,8 @@ package com.example.konduru91976.collegeapp;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -77,8 +79,10 @@ public class ApplicantActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        Fragment contentFragment = null;
 
         /*if (id == R.id.nav_camera) {
             // Handle the camera action
@@ -95,9 +99,19 @@ public class ApplicantActivity extends AppCompatActivity
         }*/
         if (id == R.id.family_member) {
             //Hangdle the family member action
+            contentFragment = new FamilyMemberFragment();
+
         } else if (id == R.id.profile) {
+            contentFragment = new ProfileFragment();
 
         }
+
+        if (contentFragment != null) {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_frame, contentFragment);
+            ft.commit();
+        }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
