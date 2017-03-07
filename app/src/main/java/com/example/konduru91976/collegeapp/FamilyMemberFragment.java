@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 
 public class FamilyMemberFragment extends android.support.v4.app.Fragment {
-
+    FamilyMemberFragment FamilyMember = new FamilyMemberFragment();
 
     @Nullable
     @Override
