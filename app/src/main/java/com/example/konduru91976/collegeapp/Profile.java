@@ -10,13 +10,33 @@ import android.view.ViewGroup;
  * Created by pranavkonduru on 3/3/17.
  */
 
-public class Profile extends android.support.v4.app.Fragment {
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+public class Profile extends android.support.v4.app.Fragment{
 
-        View rootView = inflater.inflate(R.layout.profile_fragment, container, false);
-
-        return rootView;
+    private String ProfileContent;
+    private String Alan;
+    private String Turning;
+    public String getProfileContent() {
+        return ProfileContent;
     }
+
+    public void setProfileContent(String profileContent) {
+        ProfileContent = profileContent;
+    }
+
+    public String getAlan() {
+        return Alan;
+    }
+
+    public void setAlan(String alan) {
+        Alan = alan;
+    }
+
+    public String getTurning() {
+        return Turning;
+    }
+
+    public void setTurning(String turning) {
+        Turning = turning;
+    }
+
 }
